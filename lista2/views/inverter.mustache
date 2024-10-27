@@ -1,0 +1,12 @@
+<h1>Inverter Texto</h1>
+<form action="/inverter" method="get">
+    <label for="texto">Digite o texto que deseja inverter:</label>
+    <input type="text" id="texto" name="texto" required>
+    <button type="submit">Inverter</button>
+</form>
+
+{{#textoInvertido}}
+    <h2>Texto Invertido: {{textoInvertido}}</h2>
+{{/textoInvertido}}
+
+<a href="/">Voltar para Home</a>
