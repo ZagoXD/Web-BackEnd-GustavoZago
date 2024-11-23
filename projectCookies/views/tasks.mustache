@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tarefas</title>
+</head>
+<body>
+  <h1>Lista de Tarefas</h1>
+  <ul>
+    {{#tasks}}
+      <li>{{name}} (Grupo: {{group}})</li>
+    {{/tasks}}
+  </ul>
+  {{#user}}
+    <form action="/tasks/add" method="POST">
+      <input type="text" name="name" placeholder="Nome da tarefa">
+      <select name="group">
+        <option value="admin">Admin</option>
+        <option value="user">User</option>
+      </select>
+      <button type="submit">Adicionar</button>
+    </form>
+  {{/user}}
+  {{^user}}
+    <p>Faça login para adicionar tarefas.</p>
+  {{/user}}
+</body>
+</html>
